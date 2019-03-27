@@ -4,13 +4,19 @@ import List from './List';
 
 
 // if theres more than 1 wrap in parenthesis and brackets else just paremnthesis
-const Item = ({ items, product, itemClick }) => (
+const Item = ({ id, complete, itemClick, product, price }) => (
   <div>
-    <h2>{product}</h2>
-    <ul> 
-      { items.map( item => <Item key={item.id} { ...item} itemClick={itemClick} /> )}
-    </ul>
+    <li
+    style={ complete ? { ...styles.item, ...styles.complete } : styles.item } onClick={() => itemClick(id)}>
+    {product} {price}
+    </li>
   </div>
 )
+
+
+const styles = {
+  item: { cursor: 'pointer' },
+  complete: { color: 'grey', textDecoration: 'line-through' },
+}
 
 export default Item;

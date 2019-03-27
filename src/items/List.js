@@ -1,15 +1,11 @@
 import React from 'react';
+import Item from './Item';
 
-
-const Item = ({ id, product, complete, itemClick }) => (
-  <li
-    style={ complete ? { ...styles.item, ...styles.complete } : styles.item } onClick={ () => itemClick(id) } >{product}
-  </li>
+const List = ({ items, itemClick }) => (
+  <ul> 
+    { items.map( item => <Item key={item.id} {...item} itemClick={itemClick} /> )}
+  </ul>
 );
 
-const styles = {
-  item: { cursor: 'pointer' },
-  complete: { color: 'grey', textDecoration: 'line-through' },
-}
+export default List;
 
-export default Item;
