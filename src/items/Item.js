@@ -3,7 +3,7 @@ import List from './List';
 
 
 
-// if theres more than 1 wrap in parenthesis and brackets else just paremnthesis
+// if theres more than 1 wrap in parenthesis and brackets else just parenthesis
 const Item = ({ id, complete, itemClick, product, price }) => (
   <div>
     <li
@@ -16,7 +16,7 @@ const Item = ({ id, complete, itemClick, product, price }) => (
 
 const styles = {
   item: { cursor: 'pointer' },
-  complete: { color: 'grey', textDecoration: 'line-through' },
+  complete: { color: 'brown', textDecoration: 'line-through' },
 }
 
 export default Item;

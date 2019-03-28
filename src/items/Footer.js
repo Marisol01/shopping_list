@@ -4,7 +4,7 @@ const styles = {
   link: {
     cursor: 'pointer',
     textDecoration: 'underline',
-    color: 'blue',
+    color: 'green',
     marginLeft: '5px',
     marginRight: '5px',
   }
@@ -19,7 +19,7 @@ const filterLink = (current, product, setFilter) => {
 
 const Footer = ({ filter, setFilter }) => (
   <div>
-    {['All', 'Active', 'Complete'].map( f => filterLink(filter, f, setFilter) ) }
+    {['All', 'Active Items', 'Completed Items'].map( f => filterLink(filter, f, setFilter) ) }
   </div>
 )
 

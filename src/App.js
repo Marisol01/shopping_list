@@ -13,7 +13,9 @@ class App extends Component {
       { id: 2, product: "Oranges", price: "$1.00", complete: false },
       { id: 3, product: "Avocados", price: "$2.00", complete: false },
       { id: 4, product: "Pasta", price: "$4.50", complete: true },
-      { id: 5, product: "Rib-eye", price: "$7.50", complete: false }
+      { id: 5, product: "Rib-eye", price: "$7.50", complete: false },
+      { id: 6, product: "Milk", price: "$3.99", complete: false },
+      { id: 7, product: "Cereal", price: "$4.99", complete: false }
     ],
     filter: 'All'
 
@@ -64,9 +66,9 @@ class App extends Component {
   visibleItems = () => {
     const { items, filter } = this.state;
     switch(filter) {
-      case 'Active':
+      case 'Active Items':
         return items.filter( t => !t.complete )
-      case 'Complete':
+      case 'Completed Items':
         return items.filter( t => t.complete )
       default:
         return items;
@@ -80,11 +82,11 @@ class App extends Component {
       <div>
         <ul>
           <h1 className="text-center">Grocery Shopping List</h1>
-          <h2 class="flashit">Let's Make Your List!</h2>
+          <h2 class="flashit">Let's Create Your Shopping List!</h2>
           <ShoppingForm addItem={this.addItem} />
           <Footer filter={filter} setFilter={this.setFilter} />
           <List name="Shopping List" items={items} items={this.visibleItems()} itemClick={this.handleClick} />
-          { this.renderItems() }
+          {/* { this.renderItems() } */}
         </ul>
       </div>
 

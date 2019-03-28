@@ -17,11 +17,15 @@ class ShoppingForm extends Component {
  
 
   render() {
-    const { product } = this.state
+    const { item } = this.state
 
     return(
       <form onSubmit={this.handleSubmit}>
-        <input value={product} product="product" onChange={this.handleChange} required placeholder="List item and price" />
+        <input 
+          value={item} 
+          item="item" 
+          onChange={this.handleChange} 
+          required placeholder="List item and price" />
       </form>
     )
   }
